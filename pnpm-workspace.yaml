@@ -1,0 +1,5 @@
+packages:
+# 主项目
+- main-app
+# 子目录下所有项目
+- child-apps/**

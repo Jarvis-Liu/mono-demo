@@ -27,6 +27,11 @@ export const constantRouterMap = [
           title: 'Child'
         },
         component: () => import('@/views/childs/child-a.vue')
+      },
+      {
+        path: '/app-chatVideo',
+        name: 'ChatVideo',
+        component: () => import('@/views/childs/chat-video.vue')
       }
     ]
   }

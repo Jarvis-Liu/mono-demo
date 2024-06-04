@@ -9,8 +9,8 @@ import '@/assets/style/common.less'
 import microApp from '@micro-zoe/micro-app'
 
 microApp.start({
-  'router-mode': 'native-scope',
-  'keep-router-state': false
+  'router-mode': 'native',
+  'keep-router-state': true
 })
 
 microApp.router.setBaseAppRouter(router)

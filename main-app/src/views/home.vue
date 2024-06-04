@@ -9,14 +9,19 @@
         打开非微前端的child-a
       </div>
     </div>
+
     <div class="flex-1">
-      <router-view></router-view>
+      <router-view v-slot="{ Component, route }">
+        <component :is="Component" :key="route.path" />
+      </router-view>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
+import router from '@/router'
+
 const handleOpen = () => {
-  window.open('http://localhost:8810/child/a/')
+  window.open('http://localhost:8810/child/a/#/child')
 }
 </script>
 

@@ -6,20 +6,16 @@
 </template>
 
 <script setup lang="ts">
-// import { renderAsync } from 'docx-preview'
 import axios from 'axios'
 import { onMounted, ref } from 'vue'
-import './jszip'
-import './docx-preview'
+import { renderAsync } from '@/plugins/docx-preview-custom.min.mjs'
 const $docx = ref()
 const fileUrl =
   'https://501351981.github.io/vue-office/examples/dist/static/test-files/test.docx'
 
 onMounted(() => {
   axios.get(fileUrl, { responseType: 'arraybuffer' }).then((res) => {
-    docx
-      .renderAsync(res.data, $docx.value)
-      .then(() => console.log('docx: finished'))
+    renderAsync(res.data, $docx.value).then(() => console.log('docx: finished'))
   })
 })
 </script>

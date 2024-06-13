@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-all": "pnpm --filter='./main-app'  --filter='./child-apps/*' --parallel run dev",
+    "start-all": "pnpm --filter=./main-app  --filter=./child-apps/* --parallel run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

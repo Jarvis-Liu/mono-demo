@@ -26,7 +26,27 @@ export const constantRouterMap = [
         meta: {
           title: 'Child'
         },
-        component: () => import('@/views/childs/child-a.vue')
+        component: () => import('@/views/childs/child-a.vue'),
+        children: [
+          {
+            path: 'docxPreview',
+            name: 'DocxPreview',
+            meta: {
+              title: '视频预览',
+              menuKey: 'DocxPreview',
+              keepAlive: false
+            }
+          },
+          {
+            path: 'videoPreview',
+            name: 'VideoPreview',
+            meta: {
+              title: '视频预览',
+              menuKey: 'VideoPreview',
+              keepAlive: false
+            }
+          }
+        ]
       },
       {
         path: '/app-chatVideo',

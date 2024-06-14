@@ -5,14 +5,13 @@ import {
   RouteMeta,
   createWebHistory
 } from 'vue-router'
-import { markRaw } from 'vue'
 import Home from '@/views/home.vue'
 
 export const constantRouterMap = [
   {
-    path: '/',
+    path: '/child',
     name: 'home',
-    component: markRaw(Home),
+    component: Home,
     meta: {
       title: '首页',
       menuKey: 'Home',
@@ -20,14 +19,24 @@ export const constantRouterMap = [
     },
     children: [
       {
-        path: '/child',
-        name: 'home',
+        path: 'docxPreview',
+        name: 'DocxPreview',
         component: () => import('@/views/detail.vue'),
         meta: {
           title: '详情',
           menuKey: 'Detail',
           keepAlive: false
         }
+      },
+      {
+        path: 'videoPreview',
+        name: 'VideoPreview',
+        meta: {
+          title: '视频预览',
+          menuKey: 'VideoPreview',
+          keepAlive: false
+        },
+        component: () => import('@/views/videoPreview/index.vue')
       }
     ]
   },
